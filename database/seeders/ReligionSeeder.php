@@ -45,7 +45,7 @@ class ReligionSeeder extends Seeder
             ],
         ];
         foreach($religions as $religion){
-            Religion::create(['name'=>json_encode($religion)]);
+            Religion::create(['name'=>$religion]);
         }
     }
 }

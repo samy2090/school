@@ -29,4 +29,5 @@
 	<!-- /theme JS files -->
 	@yield('css')
 
+
 </head>

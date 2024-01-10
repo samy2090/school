@@ -24,6 +24,9 @@ class NationalitieSeeder extends Seeder
                                     use Illuminate\Support\Facades\DB;   in the top of seeder file
                                     use App\Models\..............;        the model namespace 
                                     and use function json_encode() if you add an array  its some time needed and sometime donot 
+                                    and use truncate(); whith the table as this code 
+                                            DB::table('nationalities')->truncate();
+                                    this for reset the number of id in the database
         */
 
         DB::table('nationalities')->truncate();
@@ -1261,7 +1264,7 @@ class NationalitieSeeder extends Seeder
         ];
 
         foreach ($nationals as $n) {
-            Nationalitie::create(['name' => json_encode($n)]);
+            Nationalitie::create(['name' => $n]);
         }
     }
 }

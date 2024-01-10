@@ -5,6 +5,7 @@
 <script src="{{asset('dashassets/js/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('dashassets/js/vendor/forms/wizards/steps.min.js')}}"></script>
 <script src="{{asset('dashassets/demo/pages/form_wizard.js')}}"></script>
+<link href="{{asset('dashassets/css/wizard.css')}}" rel="stylesheet">
 {{-- <script src="{{asset('dashassets/js/vendor/forms/validation/validate.min.js')}}"></script> --}}
 
 
