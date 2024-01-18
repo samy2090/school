@@ -29,27 +29,27 @@ class AddParents extends Component
     $currentStep = 1,
     $photos ;
 
-    // public function rules()
-    // {
-    //     return [
-    //         'arName_father' => 'required',
-    //         'enName_father' => 'required',
-    //         'jobFather_ar' => 'required',
-    //         'jobFather_en' => 'required',
-    //         'nationalID_father' => 'required',
-    //         'passport_father' => 'required',
-    //         'phoneFather' => 'required',
-    //         'nationality_father' => 'required',
-    //         'bloodFather' => 'required',
-    //         'religionFather' => 'required',
-    //         'addressFather' => 'required',
-    //         'email' => 'required | email',
-    //     ];
-    // }
+    public function rules()
+    {
+        return [
+            'arName_father' => 'required',
+            'enName_father' => 'required',
+            'jobFather_ar' => 'required',
+            'jobFather_en' => 'required',
+            'nationalID_father' => 'required',
+            'passport_father' => 'required',
+            'phoneFather' => 'required',
+            'nationality_father' => 'required',
+            'bloodFather' => 'required',
+            'religionFather' => 'required',
+            'addressFather' => 'required',
+            'email' => 'required | email',
+        ];
+    }
 
-    // public function updated($property) {
-    //     $this->validateOnly($property);
-    // }
+    public function updated($property) {
+        $this->validateOnly($property);
+    }
     
     public function nextStep()
     {
@@ -95,7 +95,7 @@ class AddParents extends Component
             $parents->bloodMother = $this->bloodMother;
             $parents->religionMother = $this->religionMother;
             $parents->addressMother = $this->addressMother;
-        // $parents->save();
+        $parents->save();
 
         if(!empty($this->photos)){
             foreach($this->photos as $photo){
@@ -108,7 +108,7 @@ class AddParents extends Component
             }
         }
         $this->successMessage = trans('messages.success');
-        // $this->currentStep = 1;
+        $this->currentStep = 1;
         
     }
 
