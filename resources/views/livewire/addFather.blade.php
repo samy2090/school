@@ -115,7 +115,7 @@
         <div class="col-lg-12">
             <div class="mb-3">
                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right col-lg-2" wire:click="nextStep"
-                type="button">{{trans('Parent_trans.Next')}}
+                type="button">{{trans('addParents.next')}}
                 </button>
             </div>
         </div>

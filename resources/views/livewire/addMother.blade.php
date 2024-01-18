@@ -115,11 +115,11 @@
         <div class="col-lg-12">
             <div class="mb-3">
                 <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button" wire:click="backStep">
-                    {{trans('Parent_trans.Back')}}
+                    {{trans('addParents.back')}}
                 </button>
 
                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button"
-                        wire:click="nextStep">{{trans('Parent_trans.Next')}}</button>
+                        wire:click="nextStep">{{trans('addParents.next')}}</button>
             </div>
         </div>
     </div>

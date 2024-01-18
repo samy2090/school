@@ -4,14 +4,18 @@ namespace App\Livewire;
 
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\Nationalitie;
 use App\Models\BloodType;
 use App\Models\Religion;
 use App\Models\StdParent;
+use App\Models\ParentAttach;
 
 
 class AddParents extends Component
 {
+    use WithFileUploads;
+
     public
     ######### fatehr information #############
     $arName_father, $enName_father, $jobFather_ar, $jobFather_en,
@@ -22,14 +26,8 @@ class AddParents extends Component
     $arName_mother, $enName_mother, $jobMother_ar, $jobMother_en, 
     $nationalID_mother, $passport_mother, $phoneMother, $nationality_mother,
     $bloodMother, $religionMother, $addressMother, $email, $password,
-    $currentStep = 1;
-
-
-    // public function updated ($propertyName){
-    //     $this->validateOnly( $propertyName, [
-    //         'arName_father'=> 'required',
-    //     ]);
-    // }
+    $currentStep = 1,
+    $photos ;
 
     // public function rules()
     // {
@@ -97,7 +95,20 @@ class AddParents extends Component
             $parents->bloodMother = $this->bloodMother;
             $parents->religionMother = $this->religionMother;
             $parents->addressMother = $this->addressMother;
-        $parents->save();
+        // $parents->save();
+
+        if(!empty($this->photos)){
+            foreach($this->photos as $photo){
+                $photo->storeAs($this->nationalID_father,$photo->getClientOriginalName(),$disk = 'parent_attachments');
+                ParentAttach::create([
+                    'file_name'=> $photo->getClientOriginalName(),
+                    'parent_id'=> StdParent::latest()->first()->id,
+                ]);
+                    return $photo;
+            }
+        }
+        $this->successMessage = trans('messages.success');
+        // $this->currentStep = 1;
         
     }
 
