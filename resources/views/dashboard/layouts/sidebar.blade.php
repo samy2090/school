@@ -137,7 +137,7 @@
 								<span>{{ trans('sidebar.stdDetails') }}</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="{{ trans('sidebar.add_stdParents') }}">
-										<li class="nav-item"><a href="{{route('addParents')}}" class="nav-link">{{ trans('sidebar.add_stdParents') }}</a></li>
+										<li class="nav-item"><a href="{{route('addParents')}}" class="nav-link">{{ trans('sidebar.stdParents_dts') }}</a></li>
 										{{-- <li class="nav-item-divider"></li> --}}
 
 							</ul>

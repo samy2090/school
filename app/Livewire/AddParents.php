@@ -25,8 +25,10 @@ class AddParents extends Component
     ########## mother information #################
     $arName_mother, $enName_mother, $jobMother_ar, $jobMother_en, 
     $nationalID_mother, $passport_mother, $phoneMother, $nationality_mother,
-    $bloodMother, $religionMother, $addressMother, $email, $password,
-    $currentStep = 1,
+    $bloodMother, $religionMother, $addressMother,
+    ######### other information ###################
+    $email, $password, $parent_id,
+    $currentStep = 1, $showTable = true, $updateMode = false,
     $photos ;
 
     public function rules()
@@ -65,7 +67,8 @@ class AddParents extends Component
         return view('livewire.add-parents' , [
             'nationalities'=> Nationalitie::all(),
             'bloods'=> BloodType::all(),
-            'religions'=> Religion::all()
+            'religions'=> Religion::all(),
+            'parents'=> StdParent::all()
         ]);
     }
 
@@ -75,7 +78,7 @@ class AddParents extends Component
         $parents = new StdParent;
             $parents->Email = $this->email;
             $parents->Password = $this->password;
-            $parents->nameFather = json_encode(['en' => $this->arName_father, 'ar' => $this->arName_father]);
+            $parents->nameFather = json_encode(['en' => $this->enName_father, 'ar' => $this->arName_father]);
             $parents->national_ID_Father = $this->nationalID_father;
             $parents->passport_ID_Father = $this->passport_father;
             $parents->phoneFather = $this->phoneFather;
@@ -112,6 +115,74 @@ class AddParents extends Component
         
     }
 
+    public function showFormAdd(){
+        $this->showTable = false;
+
+    }
+
+    public function showUpdateForm($id){
+        $this->updateMode   = true;
+        $this->showTable    = false;
+        $this->parent_id    = $id; 
+        $parent = StdParent::where('id',$this->parent_id)->first();
+        ## father information 
+        $this->email                = $parent->Email;
+        $this->password             = $parent->Password;
+
+        $this->arName_father        = $parent->getTranslation('nameFather','ar');
+        $this->enName_father        = $parent->getTranslation('nameFather','en');
+        $this->nationalID_father    = $parent->national_ID_Father;
+        $this->passport_father      = $parent->passport_ID_Father;
+        $this->phoneFather          = $parent->phoneFather;
+        $this->jobFather_ar         = $parent->getTranslation('jobFather','ar');
+        $this->jobFather_en         = $parent->getTranslation('jobFather','en');
+        $this->nationality_father   = $parent->nationality_Father;
+        $this->bloodFather          = $parent->bloodFather;
+        $this->religionFather       = $parent->religionFather;
+        $this->addressFather        = $parent->addressFather;
+        ## mother information 
+        $this->enName_mother        = $parent->getTranslation('nameMother','en');
+        $this->arName_mother        = $parent->getTranslation('nameMother','ar');
+        $this->nationalID_mother    = $parent->national_ID_Mother;
+        $this->passport_mother      = $parent->passport_ID_Mother;
+        $this->phoneMother          = $parent->phoneMother;
+        $this->jobMother_en         = $parent->getTranslation('jobMother','en');
+        $this->jobMother_ar         = $parent->getTranslation('jobMother','ar');
+        $this->nationality_mother   = $parent->nationality_Mother;
+        $this->bloodMother          = $parent->bloodMother;
+        $this->religionMother       = $parent->religionMother;
+        $this->addressMother        = $parent->addressMother;
+    }
+
+    public function submitUpdateForm(){
+        $parent = StdParent::find($this->parent_id);
+        $parent->update([
+            'Email'                 => $this->email,
+            'Password'              => $this->password,
+            'nameFather'            => ['en' => $this->enName_father, 'ar' => $this->arName_father],
+            'national_ID_Father'    => $this->nationalID_father,
+            'passport_ID_Father'    => $this->passport_father,
+            'phoneFather'           => $this->phoneFather,
+            'jobFather'             => ['en' => $this->jobFather_en, 'ar' => $this->jobFather_ar],
+            'nationality_Father'    => $this->nationality_father,
+            'bloodFather'           => $this->bloodFather,
+            'religionFather'        => $this->religionFather,
+            'addressFather'         => $this->addressFather,
+
+            // Mother_INPUTS
+            'nameMother'            => ['en' => $this->enName_mother, 'ar' => $this->arName_mother],
+            'national_ID_Mother'    => $this->nationalID_mother,
+            'passport_ID_Mother'    => $this->passport_mother,
+            'phoneMother'           => $this->phoneMother,
+            'jobMother'             => ['en' => $this->jobMother_en, 'ar' => $this->jobMother_ar],
+            'nationality_Mother'    => $this->nationality_mother,
+            'bloodMother'           => $this->bloodMother,
+            'religionMother'        => $this->religionMother,
+            'addressMother'         => $this->addressMother,
+        ]);
+        $this->successMessage = trans('messages.success');
+        return redirect(request()->header('Referer'));
+    }
 
     
 }

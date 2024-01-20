@@ -11,7 +11,7 @@ class StdParent extends Model
 {
     use HasFactory;
     use HasTranslations;
-    public $translatable = ['name'];
+    public $translatable = ['nameFather','jobFather','nameMother','jobMother'];
 
     protected $guarded = [];
     public $timestamps = true;

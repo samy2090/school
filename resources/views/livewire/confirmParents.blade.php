@@ -33,9 +33,18 @@
             <div class="col-md-12">
                 <h3 style="font-family: 'Cairo', sans-serif;">هل انت متاكد من حفظ البيانات ؟</h3><br>
                 <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button"
-                        wire:click="backStep">{{ trans('addParents.back') }}</button>
+                    wire:click="backStep">{{ trans('addParents.back') }}
+                </button>
+                @if ($updateMode)
+                    <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="submitUpdateForm"
+                        type="button">{{ trans('addParents.finish') }}
+                    </button>
+                @else
                 <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="submitForm"
-                        type="button">{{ trans('addParents.finish') }}</button>
+                    type="button">{{ trans('addParents.finish') }}
+                </button>
+                @endif
+
             </div>
         </div>
     </div>

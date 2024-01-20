@@ -12,7 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'addParent' => 'Add New Parent',
+    'parentsList' => 'Show Parents List',
     'notes' => 'Notes',
     'options' => 'Options',
     'edit' => 'Edit',
@@ -34,8 +35,10 @@ return [
 
     'arName_father' => 'Father Name Arabic',
     'enName_father' => 'Father Name English',
+    'fatherName' => 'Father Name',
     'jobFather_ar' => 'Job Title Arabic',
     'jobFather_en' => 'Job Title English',
+    'jobFather' => 'Father Job',
     'national_father' => 'Identification Number',
     'passport_father' => 'Passport Number',
     'phoneFather' => 'Telephone Number',
@@ -46,14 +49,17 @@ return [
 
     'arName_mother' => 'Mother Name Arabic',
     'enName_mother' => 'Mother Name English',
+    'motherName' => 'Mother Name',
     'jobMother_ar' => 'Job Title Arabic',
     'jobMother_en' => 'Job Title English',
+    'jobMother' => 'Mother Job',
     'nationalID_mother' => 'Identification Number',
     'passport_mother' => 'Passport Number',
     'phoneMother' => 'Telephone Number',
     'addressMother' => 'Address Mother',
 
-    'Next' => 'Next',
-    'Choose' => 'Choose',
+    'next' => 'Next',
+    'choose' => 'Choose',
+    'options' => 'Options',
 
 ];

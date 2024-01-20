@@ -14,6 +14,8 @@ return [
     */
 
 
+    'addParent' => 'اضافة ولي امر جديد ',
+    'parentsList' => 'عرض قائمة اولياء الامور ',
     'notes' => 'ملاحظات ',
     'options' => 'اجراءات',
     'edit' => 'تعديل',
@@ -34,8 +36,10 @@ return [
     //معلومات الاب
     'arName_father' => 'اسم الاب باللغة العربية',
     'enName_father' => 'اسم الاب  باللغة الانجليزية',
+    'fatherName' => 'اسم الاب ',
     'jobFather_ar' => 'اسم الوظيفة باللغة العربية',
     'jobFather_en' => 'اسم الوظيفة باللغة الانجليزية',
+    'jobFather' => 'وظيفة الاب',
     'nationalID_father' => 'رقم الهوية',
     'passport_father' => 'رقم جواز السفر',
     'phoneFather' => 'رقم الهاتف',
@@ -47,8 +51,10 @@ return [
      //معلومات الام
     'arName_mother' => 'اسم الام باللغة العربية',
     'enName_mother' => 'اسم الام  باللغة الانجليزية',
+    'motherName' => 'اسم الام  ',
     'jobMother_ar' => 'اسم الوظيفة باللغة العربية',
     'jobMother_en' => 'اسم الوظيفة باللغة الانجليزية',
+    'jobMother' => 'وظيفة الام',
     'nationalID_mother' => 'رقم الهوية',
     'passport_mother' => 'رقم جواز السفر',
     'phoneMother' => 'رقم الهاتف',
@@ -61,6 +67,7 @@ return [
     'back' => 'السابق',
     'finish' => 'تاكيد',
     'choose' => 'اختيار من القائمة',
+    'options' => 'اجراءات',
 
 
 ];
