@@ -76,28 +76,28 @@ class AddParents extends Component
     {
 
         $parents = new StdParent;
-            $parents->Email = $this->email;
-            $parents->Password = $this->password;
-            $parents->nameFather = json_encode(['en' => $this->enName_father, 'ar' => $this->arName_father]);
-            $parents->national_ID_Father = $this->nationalID_father;
-            $parents->passport_ID_Father = $this->passport_father;
-            $parents->phoneFather = $this->phoneFather;
-            $parents->jobFather = json_encode(['en' => $this->jobFather_en, 'ar' => $this->jobFather_ar]);
-            $parents->nationality_Father = $this->nationality_father;
-            $parents->bloodFather = $this->bloodFather;
-            $parents->religionFather = $this->religionFather;
-            $parents->addressFather = $this->addressFather;
+            $parents->Email                 = $this->email;
+            $parents->Password              = $this->password;
+            $parents->nameFather            = ['en' => $this->enName_father, 'ar' => $this->arName_father];
+            $parents->national_ID_Father    = $this->nationalID_father;
+            $parents->passport_ID_Father    = $this->passport_father;
+            $parents->phoneFather           = $this->phoneFather;
+            $parents->jobFather             = ['en' => $this->jobFather_en, 'ar' => $this->jobFather_ar];
+            $parents->nationality_Father    = $this->nationality_father;
+            $parents->bloodFather           = $this->bloodFather;
+            $parents->religionFather        = $this->religionFather;
+            $parents->addressFather         = $this->addressFather;
 
             // Mother_INPUTS
-            $parents->nameMother = json_encode(['en' => $this->enName_mother, 'ar' => $this->arName_mother]);
-            $parents->national_ID_Mother = $this->nationalID_mother;
-            $parents->passport_ID_Mother = $this->passport_mother;
-            $parents->phoneMother = $this->phoneMother;
-            $parents->jobMother = json_encode (['en' => $this->jobMother_en, 'ar' => $this->jobMother_ar]);
-            $parents->nationality_Mother = $this->nationality_mother;
-            $parents->bloodMother = $this->bloodMother;
-            $parents->religionMother = $this->religionMother;
-            $parents->addressMother = $this->addressMother;
+            $parents->nameMother            = ['en' => $this->enName_mother, 'ar' => $this->arName_mother];
+            $parents->national_ID_Mother    = $this->nationalID_mother;
+            $parents->passport_ID_Mother    = $this->passport_mother;
+            $parents->phoneMother           = $this->phoneMother;
+            $parents->jobMother             =  ['en' => $this->jobMother_en, 'ar' => $this->jobMother_ar];
+            $parents->nationality_Mother    = $this->nationality_mother;
+            $parents->bloodMother           = $this->bloodMother;
+            $parents->religionMother        = $this->religionMother;
+            $parents->addressMother         = $this->addressMother;
         $parents->save();
 
         if(!empty($this->photos)){
@@ -107,12 +107,10 @@ class AddParents extends Component
                     'file_name'=> $photo->getClientOriginalName(),
                     'parent_id'=> StdParent::latest()->first()->id,
                 ]);
-                    return $photo;
             }
         }
         $this->successMessage = trans('messages.success');
-        $this->currentStep = 1;
-        
+        $this->showTable = true;
     }
 
     public function showFormAdd(){
@@ -181,8 +179,13 @@ class AddParents extends Component
             'addressMother'         => $this->addressMother,
         ]);
         $this->successMessage = trans('messages.success');
+        $this->showTable    = true;
         return redirect(request()->header('Referer'));
     }
 
+    public function destroy($id){
+        StdParent::findOrFail($id)->delete();
+        return redirect(request()->header('Referer'));
+    }
     
 }
