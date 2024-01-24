@@ -48,6 +48,7 @@ Route::group(
             Route::view('/','dashboard.layouts.new_page')->name('home');
             Route::resource('/grades','App\Http\Controllers\GradeController');
             Route::resource('/sections','App\Http\Controllers\SectionController');
+            Route::resource('/teachers','App\Http\Controllers\TeacherController');
             Route::view('/addParents','dashboard.addParents')->name('addParents');
 
 

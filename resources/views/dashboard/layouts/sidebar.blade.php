@@ -145,16 +145,11 @@
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-arrow-fat-lines-down"></i>
-								<span>Vertical navigation</span>
+								<span>{{ trans('sidebar.teachersInfo') }}</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Vertical navigation">
-								<li class="nav-item"><a href="navigation_vertical_styles.html" class="nav-link">Navigation styles</a></li>
-								<li class="nav-item"><a href="navigation_vertical_collapsible.html" class="nav-link">Collapsible menu</a></li>
-								<li class="nav-item"><a href="navigation_vertical_accordion.html" class="nav-link">Accordion menu</a></li>
-								<li class="nav-item"><a href="navigation_vertical_bordered.html" class="nav-link">Bordered navigation</a></li>
-								<li class="nav-item"><a href="navigation_vertical_right_icons.html" class="nav-link">Right icons</a></li>
-								<li class="nav-item"><a href="navigation_vertical_badges.html" class="nav-link">Badges</a></li>
-								<li class="nav-item"><a href="navigation_vertical_disabled.html" class="nav-link">Disabled items</a></li>
+								<li class="nav-item"><a href="navigation_vertical_styles.html" class="nav-link">{{ trans('sidebar.teachersList') }}</a></li>
+
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">

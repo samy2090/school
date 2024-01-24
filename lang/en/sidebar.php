@@ -25,6 +25,8 @@ return [
     'stdDetails' => ' Students Information ',
     'stdParents_dts' => ' Students Parents Information ',
     'add_stdParents' => ' Add New Parents ',
+    'teachersInfo' => ' Teachers Info ',
+    'teachersList' => ' Teachers List ',
 
 
 ];

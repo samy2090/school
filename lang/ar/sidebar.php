@@ -25,6 +25,9 @@ return [
     'stdDetails' => ' بيانات الطلاب ',
     'stdParents_dts' => ' بيانات اولياء الامور ',
     'add_stdParents' => ' اضافة ولي امر جديد ',
+    'add_stdParents' => ' اضافة ولي امر جديد ',
+    'teachersInfo' => ' بيانات المدرسين ',
+    'teachersList' => ' قائمة المدرسين ',
 
 
 
