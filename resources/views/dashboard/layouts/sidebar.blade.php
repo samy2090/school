@@ -148,7 +148,7 @@
 								<span>{{ trans('sidebar.teachersInfo') }}</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Vertical navigation">
-								<li class="nav-item"><a href="navigation_vertical_styles.html" class="nav-link">{{ trans('sidebar.teachersList') }}</a></li>
+								<li class="nav-item"><a href="{{route('teachers.index')}}" class="nav-link">{{ trans('sidebar.teachersList') }}</a></li>
 
 							</ul>
 						</li>

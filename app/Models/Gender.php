@@ -14,7 +14,7 @@ class Gender extends Model
     
     public $table        = 'genders';
     public $translatable = ['name']; 
+    public $timestamps = true;
 
-    protected $timestamps   = ture;
-    protected $guarded      = [];
+    protected $guarded = [];
 }

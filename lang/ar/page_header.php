@@ -23,6 +23,8 @@ return [
     'stdDetails' => ' بيانات الطلاب ',
     'stdParents_dts' => ' بيانات اولياء الامور ',
     'add_stdParents' => ' اضافة ولي امر جديد ',
+    'teachers' => ' المدرسين ',
+    'teachers_list' => ' قائمة المدرسين ',
 
 
 ];
