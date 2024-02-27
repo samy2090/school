@@ -17,4 +17,5 @@ class Specialization extends Model
 
     protected $timestamp    = true ;
     protected $guarded      = [];
+
 }

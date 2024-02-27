@@ -15,4 +15,9 @@ class Teacher extends Model
 
     protected $guarded = [];
     public $timestamps = true;
+
+    public function specialization(){
+        return $this->belongsTo('App\Models\Specialization','specialization_id');
+    }
+
 }

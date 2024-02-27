@@ -63,7 +63,7 @@
                                                     <tr>
                                                         <td>{{++$i}}</td>
                                                         <td>{{$teacher['name']}}</td>
-                                                        <td>{{$teacher['specialization_id']}}</td>
+                                                        <td>{{$teacher->specialization->name}}</td>
                                                         <td>{{$teacher['joiningDate']}}</td>
                                                         <td>
                                                             
