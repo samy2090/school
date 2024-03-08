@@ -32,7 +32,7 @@ class TeacherRepository implements TeacherRepositoryInterface {
             $teacher->email                 = $request['email']; 
             $teacher->password              = $request['password'];
             $teacher->password              = $request['password'];
-            $teacher->name                  = json_encode(['ar'=>$request['arName'],'en'=>$request['enName']]);
+            $teacher->name                  = ['ar'=>$request['arName'],'en'=>$request['enName']];
             $teacher->specialization_id     = $request['specialization'];
             $teacher->gender_id             = $request['gender'];
             $teacher->joiningDate           = $request['joiningDate'];
@@ -41,6 +41,28 @@ class TeacherRepository implements TeacherRepositoryInterface {
             // return var_dump($request['joiningDate']);
             toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
             return redirect()->route('teachers.index');
+        }
+        catch(\Exception $e){
+            return redirect()->back()->withErrors(['error'=> $e->getMessage()]);
+        }
+    }
+
+    public function updateTeacher($request){
+        try{
+
+            $teacher = Teacher::findOrFail($request->id);
+            
+                $teacher->email                 = $request['email'];
+                $teacher->password              = $request['password'];
+                $teacher->password              = $request['password'];
+                $teacher->name                  = ['ar'=>$request['arName'],'en'=>$request['enName']];
+                $teacher->specialization_id     = $request['specialization'];
+                $teacher->gender_id             = $request['gender'];
+                $teacher->joiningDate           = $request['joiningDate'];
+                $teacher->address               = $request['address'];
+                $teacher->save();
+                toastr()->success('Data has been saved successfully!', 'Congrats', ['timeOut' => 5000]);
+                return redirect()->route('teachers.index');
         }
         catch(\Exception $e){
             return redirect()->back()->withErrors(['error'=> $e->getMessage()]);

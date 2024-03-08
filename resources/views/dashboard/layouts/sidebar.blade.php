@@ -155,10 +155,10 @@
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-arrow-fat-lines-right"></i>
-								<span>Horizontal navigation</span>
+								<span>student</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Horizontal navigation">
-								<li class="nav-item"><a href="navigation_horizontal_styles.html" class="nav-link">Navigation styles</a></li>
+								<li class="nav-item"><a href="{{route('students.index')}}" class="nav-link">students</a></li>
 								<li class="nav-item"><a href="navigation_horizontal_elements.html" class="nav-link">Navigation elements</a></li>
 								<li class="nav-item"><a href="navigation_horizontal_tabs.html" class="nav-link">Tabbed navigation</a></li>
 								<li class="nav-item"><a href="navigation_horizontal_disabled.html" class="nav-link">Disabled navigation links</a></li>

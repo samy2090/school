@@ -66,9 +66,103 @@
                                                         <td>{{$teacher->specialization->name}}</td>
                                                         <td>{{$teacher['joiningDate']}}</td>
                                                         <td>
-                                                            
+                                                            <button type="button" class="btn btn-outline-secondary rounded-pill p-1" title="{{ trans('teachers.edit') }}" data-bs-toggle="modal" data-bs-target="#modal_centered_edit{{$teacher->id}}">
+                                                                <i class="ph-note-pencil ph-1x"></i>
+                                                            </button>	
+                                                            <button type="button" class="btn btn-outline-danger rounded-pill p-1" title="{{ trans('teachers.delete') }}" data-bs-toggle="modal" data-bs-target="#modal_delete{{$teacher->id}}">
+                                                                <i class="ph-trash ph-1x "></i>
+                                                            </button>
                                                         </td>
                                                     </tr>
+                                                    <!-- start edit teacher modal -->
+                                                    <div id="modal_centered_edit{{$teacher->id}}" class="modal fade" tabindex="-1">
+                                                        <div class="modal-dialog modal-full">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header ">
+                                                                    <h5 class="modal-title">{{ trans('teachers.addTeacher') }}</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                                </div>
+                                                                <form action="{{route('teachers.update', $teacher->id)}}" method="POST">
+                                                                    @csrf @method('PATCH')
+                                                                    <div class="modal-body">
+                                                                        <div class="row">
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.email') }}</label>
+                                                                                <div class="">
+                                                                                    <input type="text" class="form-control" placeholder="{{ trans('teachers.email') }}" name="email" value="{{$teacher['email']}}">
+                                                                                    <input type="hidden" name="id" value="{{$teacher['id']}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.password') }}</label>
+                                                                                <div class="">
+                                                                                    <input type="password" class="form-control" placeholder="{{ trans('teachers.password') }}" name="password" value="{{$teacher['password']}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.arName') }}</label>
+                                                                                <div class="">
+                                                                                    <input type="text" class="form-control" placeholder="{{ trans('teachers.arName') }}" name="arName" value="{{$teacher->getTranslation('name','ar')}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.enName') }}</label>
+                                                                                <div class="">
+                                                                                    <input type="text" class="form-control" placeholder="{{ trans('teachers.enName') }}" name="enName" value="{{$teacher->getTranslation('name','en')}}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class=" mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.specialization') }}</label>
+                                                                                <div class="">
+                                                                                    <select class="form-select" name="specialization">
+                                                                                        <option value="opt1" style="display:none">{{ trans('teachers.selectOption') }}</option>
+                                                                                        @foreach ($specializations as $specialization)
+                                                                                            <option value="{{$specialization['id']}}" {{$teacher['specialization_id'] == $specialization['id'] ? 'selected' : '' }}>{{$specialization['name']}}</option>
+                                                                                        @endforeach
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.gender') }}</label>
+                                                                                <div class="">
+                                                                                    <select class="form-select" name="gender">
+                                                                                        <option value="opt1" style="display:none">{{ trans('teachers.selectOption') }}</option>
+                                                                                        @foreach ($genders as $gender)
+                                                                                            <option value="{{$gender['id']}}" {{$teacher['gender_id'] == $gender['id'] ? 'selected' : '' }}>{{$gender['name']}}</option>
+                                                                                        @endforeach
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.joiningDate') }}</label>
+                                                                                <div class="">
+                                                                                        <div class="input-group">
+                                                                                            <span class="input-group-text">
+                                                                                                <i class="ph-calendar"></i>
+                                                                                            </span>
+                                                                                            <input type="text" class="form-control datepicker-autohide" placeholder="Pick a date"  name="joiningDate" value="{{$teacher['joiningDate']}}" >
+                                                                                        </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="mb-3 col-lg-6">
+                                                                                <label class="form-label">{{ trans('teachers.address') }}</label>
+                                                                                <div class="">
+                                                                                    <textarea rows="3" cols="3" class="form-control" placeholder="{{ trans('teachers.address') }}" name="address">{{$teacher['address']}}</textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /end edit teacher modal -->
+
                                                 @endforeach
                                                 
                                             </tbody>
@@ -79,7 +173,7 @@
                         </div>
 					</div>
 
-                    <!-- Full width modal -->
+                    <!-- start add new teacher modal -->
                     <div id="modal_full" class="modal fade" tabindex="-1">
                         <div class="modal-dialog modal-full">
                             <div class="modal-content">
@@ -165,7 +259,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /full width modal -->
+                    <!-- /end add new teacher modal -->
 
 					<!-- /collapsed state -->
 @endsection

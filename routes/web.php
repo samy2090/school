@@ -49,6 +49,7 @@ Route::group(
             Route::resource('/grades','App\Http\Controllers\GradeController');
             Route::resource('/sections','App\Http\Controllers\SectionController');
             Route::resource('/teachers','App\Http\Controllers\TeacherController');
+            Route::resource('/students','App\Http\Controllers\StudentController');
             Route::view('/addParents','dashboard.addParents')->name('addParents');
 
 

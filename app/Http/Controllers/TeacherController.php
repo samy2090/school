@@ -28,4 +28,8 @@ class TeacherController extends Controller
     public function store(Request $request){
         return $this->teacherRepository->storeTeacher($request);
     }
+
+    public function update(Request $request){
+        return $this->teacherRepository->updateTeacher($request);
+    }
 }

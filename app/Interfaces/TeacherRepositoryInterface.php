@@ -8,5 +8,6 @@ interface TeacherRepositoryInterface {
     public function getSpecializations();
     public function getGenders();
     public function storeTeacher($request);
+    public function updateTeacher($request);
 
 }
