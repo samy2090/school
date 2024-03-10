@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interfaces\StudentRepositoryInterface;
+use App\Interfaces\TeacherRepositoryInterface;
 use App\Http\Controllers\Controller;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -11,10 +12,12 @@ class StudentController extends Controller
 {
 
     protected $studentRepository;
+    protected $teacherRepository;
 
-    public function __construct(StudentRepositoryInterface $studentRepository) 
+    public function __construct(StudentRepositoryInterface $studentRepository, TeacherRepositoryInterface $teacherRepository ) 
     {
         $this->studentRepository = $studentRepository;
+        $this->teacherRepository = $teacherRepository;
     }
 
     /**
@@ -22,7 +25,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return $this->studentRepository->getStudents();
+        $data['students']       = $this->studentRepository->getStudents();
+        $data['stdParents']     = $this->studentRepository->getStdParent();
+        $data['nationalities']  = $this->studentRepository->getNationality();
+        $data['bloods']         = $this->studentRepository->getBloodType();
+        $data['getGrade']       = $this->studentRepository->getGrade();
+        $data['genders']        = $this->teacherRepository->getGenders();
+        return view('dashboard.student.studenIndex',$data );
     }
 
     /**

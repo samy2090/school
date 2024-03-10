@@ -138,6 +138,7 @@
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="{{ trans('sidebar.add_stdParents') }}">
 										<li class="nav-item"><a href="{{route('addParents')}}" class="nav-link">{{ trans('sidebar.stdParents_dts') }}</a></li>
+										<li class="nav-item"><a href="{{route('students.index')}}" class="nav-link">{{ trans('sidebar.students') }}</a></li>
 										{{-- <li class="nav-item-divider"></li> --}}
 
 							</ul>
@@ -158,7 +159,6 @@
 								<span>student</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Horizontal navigation">
-								<li class="nav-item"><a href="{{route('students.index')}}" class="nav-link">students</a></li>
 								<li class="nav-item"><a href="navigation_horizontal_elements.html" class="nav-link">Navigation elements</a></li>
 								<li class="nav-item"><a href="navigation_horizontal_tabs.html" class="nav-link">Tabbed navigation</a></li>
 								<li class="nav-item"><a href="navigation_horizontal_disabled.html" class="nav-link">Disabled navigation links</a></li>

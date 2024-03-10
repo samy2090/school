@@ -28,6 +28,7 @@ return [
     'add_stdParents' => ' اضافة ولي امر جديد ',
     'teachersInfo' => ' بيانات المدرسين ',
     'teachersList' => ' قائمة المدرسين ',
+    'students' => ' الطلاب ',
 
 
 

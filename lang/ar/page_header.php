@@ -25,6 +25,8 @@ return [
     'add_stdParents' => ' اضافة ولي امر جديد ',
     'teachers' => ' المدرسين ',
     'teachers_list' => ' قائمة المدرسين ',
+    'students' => ' الطلاب ',
+    'students_list' => ' قائمة الطلاب ',
 
 
 ];
