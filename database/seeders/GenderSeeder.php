@@ -16,11 +16,11 @@ class GenderSeeder extends Seeder
     {
         DB::table('genders')->delete();
         $genders = [
-            ['ar'=>'ذكر','en'=>'male']
-        ,['ar'=>'انثي','en'=>'female']
+            ['ar'=>'ذكر','en'=>'male'],
+            ['ar'=>'انثي','en'=>'female']
         ];
         foreach ($genders as $gender){
-            Gender::create(['name'=>json_encode($gender)]);
+            Gender::create(['name'=>$gender]);
         }
     }
 }

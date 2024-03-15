@@ -29,7 +29,7 @@ class ReligionSeeder extends Seeder
 
 
         
-        DB::table('religions')->truncate();
+        DB::table('religions')->delete();
         $religions = [
             [
                 'en'=> 'Muslim',

@@ -27,7 +27,7 @@ return [
     'blood' => "فصيلة الدم",
     'selectOption' => "اختر من القائمة ....",
     'birthDate' => "تاريخ الميلاد",
-    'currentYear' => "السنة الدراسية",
+    'joiningYear' => "سنة الالتحاق",
     'grade' => "المرحلة الدراسية",
     'classroom' => "الصف الدراسي",
     'section' => "الفصل",

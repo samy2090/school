@@ -29,7 +29,7 @@ class StudentController extends Controller
         $data['stdParents']     = $this->studentRepository->getStdParent();
         $data['nationalities']  = $this->studentRepository->getNationality();
         $data['bloods']         = $this->studentRepository->getBloodType();
-        $data['getGrade']       = $this->studentRepository->getGrade();
+        $data['grades']       = $this->studentRepository->getGrade();
         $data['genders']        = $this->teacherRepository->getGenders();
         return view('dashboard.student.studenIndex',$data );
     }

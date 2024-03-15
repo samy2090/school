@@ -10,8 +10,9 @@
     <script src="{{asset('dashassets/demo/pages/picker_date.js')}}"></script>
     <!-- /theme JS files -->
     <style>
-        .datepicker { z-index: 1600 !important;      right: 280px; }
+        .datepicker { z-index: 1600 !important;  right: 1288px; }
     </style>
+    
 @endsection
 
 @section('title', 'Students ')
@@ -84,15 +85,15 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="mb-3 col-lg-6">
-                                    <label class="form-label">{{ trans('students.email') }}</label>
+                                    <label class="form-label">{{ trans('students.arName') }}</label>
                                     <div class="">
-                                        <input type="text" class="form-control" placeholder="{{ trans('students.email') }}" name="email">
+                                        <input type="text" class="form-control" placeholder="{{ trans('students.arName') }}" name="arName">
                                     </div>
                                 </div>
                                 <div class="mb-3 col-lg-6">
-                                    <label class="form-label">{{ trans('students.email') }}</label>
+                                    <label class="form-label">{{ trans('students.enName') }}</label>
                                     <div class="">
-                                        <input type="text" class="form-control" placeholder="{{ trans('students.email') }}" name="email">
+                                        <input type="text" class="form-control" placeholder="{{ trans('students.enName') }}" name="enName">
                                     </div>
                                 </div>
                                 <div class="mb-3 col-lg-6">
@@ -107,51 +108,117 @@
                                         <input type="password" class="form-control" placeholder="{{ trans('students.password') }}" name="password">
                                     </div>
                                 </div>
-                                <div class="mb-3 col-lg-6">
-                                    <label class="form-label">{{ trans('students.arName') }}</label>
-                                    <div class="">
-                                        <input type="text" class="form-control" placeholder="{{ trans('students.arName') }}" name="arName">
-                                    </div>
-                                </div>
-                                <div class="mb-3 col-lg-6">
-                                    <label class="form-label">{{ trans('students.enName') }}</label>
-                                    <div class="">
-                                        <input type="text" class="form-control" placeholder="{{ trans('students.enName') }}" name="enName">
-                                    </div>
-                                </div>
-                                <div class=" mb-3 col-lg-6">
-                                    <label class="form-label">{{ trans('students.specialization') }}</label>
-                                    <div class="">
-                                        <select class="form-select" name="specialization">
-                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
-                                            {{-- @foreach ($specializations as $specialization)
-                                                <option value="{{$specialization['id']}}">{{$specialization['name']}}</option>
-                                            @endforeach --}}
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="mb-3 col-lg-6">
+
+                                <div class=" mb-3 col-lg-3">
                                     <label class="form-label">{{ trans('students.gender') }}</label>
                                     <div class="">
                                         <select class="form-select" name="gender">
                                             <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
-                                            {{-- @foreach ($genders as $gender)
+                                            @foreach ($genders as $gender)
                                                 <option value="{{$gender['id']}}">{{$gender['name']}}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
-                                <div class="mb-3 col-lg-6">
-                                    <label class="form-label">{{ trans('students.joiningDate') }}</label>
+
+                                <div class="mb-3 col-lg-3">
+                                    <label class="form-label">{{ trans('students.nationality') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="nationality">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            @foreach ($nationalities as $nationality)
+                                                <option value="{{$nationality['id']}}">{{$nationality['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 col-lg-3">
+                                    <label class="form-label">{{ trans('students.blood') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="blood">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            @foreach ($bloods as $blood)
+                                                <option value="{{$blood['id']}}">{{$blood['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 col-lg-3">
+                                    <label class="form-label">{{ trans('students.birthDate') }}</label>
                                     <div class="">
                                             <div class="input-group">
                                                 <span class="input-group-text">
                                                     <i class="ph-calendar"></i>
                                                 </span>
-                                                <input type="text" class="form-control datepicker-autohide" placeholder="Pick a date"  name="joiningDate">
+                                                <input type="text" class="form-control datepicker-autohide birthDate-datepicker" placeholder="Pick a date"  name="birthDate">
                                             </div>
                                     </div>
                                 </div>
+
+                                <div class="mb-3 col-lg-2">
+                                    <label class="form-label">{{ trans('students.grade') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="grade">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            @foreach ($grades as $grade)
+                                                <option value="{{$grade['id']}}">{{$grade['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-lg-2">
+                                    <label class="form-label">{{ trans('students.classroom') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="classroom">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            {{-- @foreach ($bloods as $blood)
+                                                <option value="{{$blood['id']}}">{{$blood['name']}}</option>
+                                            @endforeach --}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-lg-2">
+                                    <label class="form-label">{{ trans('students.section') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="section">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            {{-- @foreach ($bloods as $blood)
+                                                <option value="{{$blood['id']}}">{{$blood['name']}}</option>
+                                            @endforeach --}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-lg-3">
+                                    <label class="form-label">{{ trans('students.stdParent') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="stdParent">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            @foreach ($stdParents as $stdParent)
+                                                <option value="{{$stdParent['id']}}">{{$stdParent['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 col-lg-3">
+                                    <label class="form-label">{{ trans('students.stdParent') }}</label>
+                                    <div class="">
+                                        <select class="form-select" name="stdParent">
+                                            <option value="opt1" style="display:none">{{ trans('students.selectOption') }}</option>
+                                            @php
+                                                $date = date('Y');
+                                            @endphp
+                                            @for ($year=$date-10 ; $year<=$date+1 ;$year++)
+                                                <option value="{{$year}}">{{$year}}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
+                            
+
+
                                 <div class="mb-3 col-lg-6">
                                     <label class="form-label">{{ trans('students.address') }}</label>
                                     <div class="">

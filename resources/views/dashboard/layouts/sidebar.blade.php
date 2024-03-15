@@ -156,7 +156,7 @@
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-arrow-fat-lines-right"></i>
-								<span>student</span>
+								<span>elements</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Horizontal navigation">
 								<li class="nav-item"><a href="navigation_horizontal_elements.html" class="nav-link">Navigation elements</a></li>

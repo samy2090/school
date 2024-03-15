@@ -23,7 +23,7 @@ class BloodSeeder extends Seeder
                                     and use function json_encode() if you add an array  its some time needed and sometime donot 
         */
 
-         DB::table('blood_types')->truncate(); // truncate() for reset the table and begins from 1 for id it so it better from  delete()
+         DB::table('blood_types')->delete(); // truncate() for reset the table and begins from 1 for id it so it better from  delete()
         $bloodTypes = ['A+','A-','B+','B-','AB+','AB-','O+','O-' ];
         foreach($bloodTypes as $bloodType){
             BloodType::create(['name'=>$bloodType]);

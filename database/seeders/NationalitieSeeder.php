@@ -29,7 +29,7 @@ class NationalitieSeeder extends Seeder
                                     this for reset the number of id in the database
         */
 
-        DB::table('nationalities')->truncate();
+        DB::table('nationalities')->delete();
         $nationals = [
 
             [
