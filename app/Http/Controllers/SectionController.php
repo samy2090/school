@@ -18,6 +18,12 @@ class SectionController extends Controller
         return view('dashboard.sections', compact('grades'));
     }
 
+    public function getSection($classroom_id)
+    {
+        $sections = Section::where("class_id", $classroom_id)->pluck("name_section", "id");
+        return $sections;
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -28,6 +28,7 @@
 	<script src="{{asset('dashassets/js/app.js')}}"></script>
 	<!-- /theme JS files -->
 	@yield('css')
+	@yield('js')
 
 
 </head>

@@ -50,7 +50,10 @@ Route::group(
             Route::resource('/sections','App\Http\Controllers\SectionController');
             Route::resource('/teachers','App\Http\Controllers\TeacherController');
             Route::resource('/students','App\Http\Controllers\StudentController');
+            Route::post('/uploadAttachs','App\Http\Controllers\StudentController@uploadAttachs')->name('uploadAttachs');
+            Route::post('/attachmentDelete/{id}','App\Http\Controllers\StudentController@attachmentDelete')->name('attachmentDelete');
             Route::view('/addParents','dashboard.addParents')->name('addParents');
+            Route::get('/getsection/{classroom_id}','App\Http\Controllers\SectionController@getSection');
 
 
             Route::group(['prefix'=>'/classrooms'], function () {

@@ -29,7 +29,7 @@ class StudentController extends Controller
         $data['stdParents']     = $this->studentRepository->getStdParent();
         $data['nationalities']  = $this->studentRepository->getNationality();
         $data['bloods']         = $this->studentRepository->getBloodType();
-        $data['grades']       = $this->studentRepository->getGrade();
+        $data['grades']         = $this->studentRepository->getGrade();
         $data['genders']        = $this->teacherRepository->getGenders();
         return view('dashboard.student.studenIndex',$data );
     }
@@ -47,7 +47,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->studentRepository->studentSave( $request);
     }
 
     /**
@@ -71,14 +71,24 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        return $this->studentRepository->studentUpdate($request);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function uploadAttachs(Request $request)
     {
-        //
+        return $this->studentRepository->uploadAttachs($request);
+    }
+
+    public function attachmentDelete($id)
+    {
+        return $this->studentRepository->attachmentDelete($id);
+    }
+
+    public function destroy($id)
+    {
+        return $this->studentRepository->deleteStudent($id);
     }
 }
