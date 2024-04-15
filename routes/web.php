@@ -40,6 +40,10 @@ Route::group(
             return Route::post('/custom/livewire/update', $handle);
         });
 
+        Route::get('/', function () {
+            return view('welcome');
+        });
+
         Route::group(['prefix'=>'/dashboard'], function () {
 
             Route::view('/counter','dashboard.counterPage');
@@ -50,6 +54,7 @@ Route::group(
             Route::resource('/sections','App\Http\Controllers\SectionController');
             Route::resource('/teachers','App\Http\Controllers\TeacherController');
             Route::resource('/students','App\Http\Controllers\StudentController');
+            Route::resource('/promotion','App\Http\Controllers\PromotionController');
             Route::post('/uploadAttachs','App\Http\Controllers\StudentController@uploadAttachs')->name('uploadAttachs');
             Route::post('/attachmentDelete/{id}','App\Http\Controllers\StudentController@attachmentDelete')->name('attachmentDelete');
             Route::view('/addParents','dashboard.addParents')->name('addParents');

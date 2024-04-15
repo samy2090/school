@@ -29,6 +29,7 @@ return [
     'teachersInfo' => ' بيانات المدرسين ',
     'teachersList' => ' قائمة المدرسين ',
     'students' => ' الطلاب ',
+    'promotion' => ' الترقية ',
 
 
 

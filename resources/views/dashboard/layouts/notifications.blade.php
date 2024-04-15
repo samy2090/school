@@ -11,7 +11,7 @@
 		<div class="p-3">
 			<div class="d-flex align-items-start mb-3">
 				<a href="#" class="status-indicator-container me-3">
-					<img src="../../../assets/images/demo/users/face1.jpg" class="w-40px h-40px rounded-pill" alt="">
+					<img src="/dashassets/images/demo/users/face1.jpg" class="w-40px h-40px rounded-pill" alt="">
 					<span class="status-indicator bg-success"></span>
 				</a>
 				<div class="flex-fill">
@@ -30,7 +30,7 @@
 
 			<div class="d-flex align-items-start mb-3">
 				<a href="#" class="status-indicator-container me-3">
-					<img src="../../../assets/images/demo/users/face3.jpg" class="w-40px h-40px rounded-pill" alt="">
+					<img src="/dashassets/images/demo/users/face3.jpg" class="w-40px h-40px rounded-pill" alt="">
 					<span class="status-indicator bg-warning"></span>
 				</a>
 				<div class="flex-fill">
@@ -38,19 +38,19 @@
 
 					<div class="d-flex my-2">
 						<a href="#" class="status-indicator-container me-1">
-							<img src="../../../assets/images/demo/users/face10.jpg" class="w-32px h-32px rounded-pill" alt="">
+							<img src="/dashassets/images/demo/users/face10.jpg" class="w-32px h-32px rounded-pill" alt="">
 							<span class="status-indicator bg-danger"></span>
 						</a>
 						<a href="#" class="status-indicator-container me-1">
-							<img src="../../../assets/images/demo/users/face11.jpg" class="w-32px h-32px rounded-pill" alt="">
+							<img src="/dashassets/images/demo/users/face11.jpg" class="w-32px h-32px rounded-pill" alt="">
 							<span class="status-indicator bg-success"></span>
 						</a>
 						<a href="#" class="status-indicator-container me-1">
-							<img src="../../../assets/images/demo/users/face12.jpg" class="w-32px h-32px rounded-pill" alt="">
+							<img src="/dashassets/images/demo/users/face12.jpg" class="w-32px h-32px rounded-pill" alt="">
 							<span class="status-indicator bg-success"></span>
 						</a>
 						<a href="#" class="status-indicator-container me-1">
-							<img src="../../../assets/images/demo/users/face13.jpg" class="w-32px h-32px rounded-pill" alt="">
+							<img src="/dashassets/images/demo/users/face13.jpg" class="w-32px h-32px rounded-pill" alt="">
 							<span class="status-indicator bg-success"></span>
 						</a>
 						<button type="button" class="btn btn-light btn-icon d-inline-flex align-items-center justify-content-center w-32px h-32px rounded-pill p-0">
@@ -79,7 +79,7 @@
 		<div class="p-3">
 			<div class="d-flex align-items-start mb-3">
 				<a href="#" class="status-indicator-container me-3">
-					<img src="../../../assets/images/demo/users/face25.jpg" class="w-40px h-40px rounded-pill" alt="">
+					<img src="/dashassets/images/demo/users/face25.jpg" class="w-40px h-40px rounded-pill" alt="">
 					<span class="status-indicator bg-success"></span>
 				</a>
 				<div class="flex-fill">
@@ -101,7 +101,7 @@
 
 			<div class="d-flex align-items-start mb-3">
 				<a href="#" class="status-indicator-container me-3">
-					<img src="../../../assets/images/demo/users/face24.jpg" class="w-40px h-40px rounded-pill" alt="">
+					<img src="/dashassets/images/demo/users/face24.jpg" class="w-40px h-40px rounded-pill" alt="">
 					<span class="status-indicator bg-grey"></span>
 				</a>
 				<div class="flex-fill">
@@ -110,7 +110,7 @@
 					<div class="bg-light rounded p-2 my-2">
 						<div class="d-flex align-items-center">
 							<div class="me-2">
-								<img src="../../../assets/images/icons/pdf.svg" width="34" height="34" alt="">
+								<img src="/dashassets/images/icons/pdf.svg" width="34" height="34" alt="">
 							</div>
 							<div class="flex-fill">
 								new_contract.pdf
@@ -150,7 +150,7 @@
 
 			<div class="d-flex align-items-start mb-3">
 				<a href="#" class="status-indicator-container me-3">
-					<img src="../../../assets/images/demo/users/face4.jpg" class="w-40px h-40px rounded-pill" alt="">
+					<img src="/dashassets/images/demo/users/face4.jpg" class="w-40px h-40px rounded-pill" alt="">
 					<span class="status-indicator bg-danger"></span>
 				</a>
 				<div class="flex-fill">

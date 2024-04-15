@@ -28,6 +28,7 @@ return [
     'teachersInfo' => ' Teachers Info ',
     'teachersList' => ' Teachers List ',
     'students' => ' Students ',
+    'promotion' => ' Promotion ',
 
 
 
