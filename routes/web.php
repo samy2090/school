@@ -55,6 +55,10 @@ Route::group(
             Route::resource('/teachers','App\Http\Controllers\TeacherController');
             Route::resource('/students','App\Http\Controllers\StudentController');
             Route::resource('/promotion','App\Http\Controllers\PromotionController');
+            Route::resource('/graduation','App\Http\Controllers\GraduationController');
+            Route::resource('/fees','App\Http\Controllers\FeesController');
+            Route::resource('/std_account','App\Http\Controllers\StdAccountController');
+            Route::post('/back_graduation/{id}','App\Http\Controllers\GraduationController@back_graduation')->name('back_graduation');
             Route::post('/uploadAttachs','App\Http\Controllers\StudentController@uploadAttachs')->name('uploadAttachs');
             Route::post('/attachmentDelete/{id}','App\Http\Controllers\StudentController@attachmentDelete')->name('attachmentDelete');
             Route::view('/addParents','dashboard.addParents')->name('addParents');

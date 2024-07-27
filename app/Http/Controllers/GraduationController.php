@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Graduation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Student;
+use App\Models\Grade;
+
 
 class GraduationController extends Controller
 {
@@ -12,8 +15,10 @@ class GraduationController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {  
+        $grades     = Grade::all();
+        $graduated_stds   = Student::onlyTrashed()->get();
+        return view('dashboard.graduation',compact('graduated_stds','grades'));
     }
 
     /**
@@ -29,7 +34,21 @@ class GraduationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $students    = Student::where('grade_id',$request->grade_id)->where('classroom_id',$request->classroom_id)->where('section_id',$request->section_id)->get();
+        
+        if($students->count() > 0 ){
+            foreach ($students as $student){
+                $ids = explode(',',$student->id);
+                student::whereIn('id', $ids)->Delete();
+            }
+            toastr()->success(trans('messages.success'));
+            return redirect()->route('graduation.index');
+        }
+
+        else{
+            return redirect()->back()->with('error_Graduated', __('لاتوجد بيانات في جدول الطلاب'));
+        }
+
     }
 
     /**
@@ -59,8 +78,17 @@ class GraduationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Graduation $graduation)
+    public function back_graduation($id)
     {
-        //
+        Student::onlyTrashed()->where('id', $id)->first()->restore();
+        toastr()->success(trans('messages.success'));
+        return redirect()->route('graduation.index');
+    }
+
+    public function destroy(Graduation $id)
+    {
+        student::onlyTrashed()->where('id', $id)->first()->forceDelete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->back();
     }
 }

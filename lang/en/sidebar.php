@@ -29,6 +29,9 @@ return [
     'teachersList' => ' Teachers List ',
     'students' => ' Students ',
     'promotion' => ' Promotion ',
+    'fees' => ' Fees ',
+    'current_fees' => ' Current Fees ',
+    'std_fees' => ' Students Fees ',
 
 
 

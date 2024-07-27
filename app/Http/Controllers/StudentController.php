@@ -30,6 +30,7 @@ class StudentController extends Controller
         $data['nationalities']  = $this->studentRepository->getNationality();
         $data['bloods']         = $this->studentRepository->getBloodType();
         $data['grades']         = $this->studentRepository->getGrade();
+        $data['allfees']        = $this->studentRepository->getFees();
         $data['genders']        = $this->teacherRepository->getGenders();
         return view('dashboard.student.studenIndex',$data );
     }

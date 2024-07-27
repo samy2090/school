@@ -85,13 +85,16 @@
                                     <td>{{$student->section->classroom->name}}</td>
                                     <td>{{$student->section->name_section}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-secondary rounded-pill p-1" title="{{ trans('teachers.edit') }}" data-bs-toggle="modal" data-bs-target="#modal_centered_edit{{$student->id}}">
+                                        <button type="button" class="btn btn-outline-secondary rounded-pill p-1" title="{{ trans('students.edit') }}" data-bs-toggle="modal" data-bs-target="#modal_centered_edit{{$student->id}}">
                                             <i class="ph-note-pencil ph-1x"></i>
                                         </button>	
-                                        <button type="button" class="btn btn-outline-warning rounded-pill p-1" title="{{ trans('teachers.show') }}" data-bs-toggle="modal" data-bs-target="#modal_show{{$student->id}}">
+                                        <button type="button" class="btn btn-outline-warning rounded-pill p-1" title="{{ trans('students.show') }}" data-bs-toggle="modal" data-bs-target="#modal_show{{$student->id}}">
                                             <i class="ph-info ph-1x"></i>
                                         </button>
-                                        <button type="button" class="btn btn-outline-danger rounded-pill p-1" title="{{ trans('teachers.delete') }}" data-bs-toggle="modal" data-bs-target="#modal_delete{{$student->id}}">
+                                        <button type="button" class="btn btn-outline-success rounded-pill p-1" title="{{ trans('students.fees') }}" data-bs-toggle="modal" data-bs-target="#modal_student_fees{{$student->id}}">
+                                            <i class="ph-money ph-1x"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger rounded-pill p-1" title="{{ trans('students.delete') }}" data-bs-toggle="modal" data-bs-target="#modal_delete{{$student->id}}">
                                             <i class="ph-trash ph-1x "></i>
                                         </button>
 
@@ -268,8 +271,66 @@
                                             </div>
                                         </div>
                                         <!-- /end edit new student modal -->
-                                    
+
+                                        <!-- start student info model -->
                                         @include('dashboard.student.showStudent')
+                                        <!-- /end student info model -->
+
+                                        <!-- start student fees modal -->
+                                        <div id="modal_student_fees{{$student->id}}" class="modal fade" tabindex="-1">
+                                            <div class="modal-dialog modal-full">
+                                                <div class="modal-content">
+                                                    <div class="modal-header ">
+                                                        <h5 class="modal-title">{{ trans('pages.add_new_fees') }}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <form action="{{route('std_account.store')}}" method="POST"  enctype="multipart/form-data">
+                                                        @csrf @method('POST')
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="mb-3 col-lg-6">
+                                                                    <label class="form-label">{{ trans('pages.name') }}</label>
+                                                                    <div class="">
+                                                                        <input type="text" class="form-control" placeholder="{{ trans('pages.name') }}" name="std_name" value="{{$student->name}}" disabled>
+                                                                        <input type="hidden"  name="std_id" value="{{$student->id}}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3 col-lg-6">
+                                                                    <label class="form-label">{{ trans('pages.fees_type') }}</label>
+                                                                    <div class="">
+                                                                        <select class="form-select" name="fees_id">
+                                                                            <option value="#" style="display:none">{{ trans('students.selectOption') }}</option>
+                                                                            @foreach ( $allfees as $fees)
+                                                                            <option value="{{$fees->id}}" >{{ $fees->title }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- <div class="mb-3 col-lg-6">
+                                                                    <label class="form-label">{{ trans('pages.amount') }}</label>
+                                                                    <div class="">
+                                                                        <input type="text" class="form-control" placeholder="{{ trans('pages.name') }}" name="amount">
+                                                                    </div>
+                                                                </div> --}}
+                                                                <div class="mb-3 col-lg-12">
+                                                                    <label class="form-label">{{ trans('pages.info') }}</label>
+                                                                    <div class="">
+                                                                        <input type="text" class="form-control" placeholder="{{ trans('pages.info') }}" name="info" >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /end student fees modal -->
+
                                         <!-- start delete modal -->
                                         <div id="modal_delete{{$student->id}}" class="modal fade" tabindex="-1">
                                             <div class="modal-dialog">
@@ -306,6 +367,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- start add new student modal -->
         <div id="modal_full" class="modal fade" tabindex="-1">

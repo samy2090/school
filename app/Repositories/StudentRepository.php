@@ -11,6 +11,7 @@ use App\Models\BloodType;
 use App\Models\Grade;
 use App\Models\Student;
 use App\Models\Image;
+use App\Models\Fees;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,6 +37,10 @@ class StudentRepository implements StudentRepositoryInterface {
 
     public function getGrade(){
         return Grade::all();
+    }
+
+    public function getFees(){
+        return Fees::all();
     }
 
     public function deleteStudent($id){

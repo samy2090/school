@@ -30,6 +30,9 @@ return [
     'teachersList' => ' قائمة المدرسين ',
     'students' => ' الطلاب ',
     'promotion' => ' الترقية ',
+    'fees' => ' الرسوم ',
+    'current_fees' => ' الرسوم المقررة ',
+    'std_fees' => ' رسوم الطلاب ',
 
 
 

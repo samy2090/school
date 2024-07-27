@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 
 
 class Student extends Model
 {
+    use SoftDeletes;
     use HasFactory;
     use HasTranslations;
     public $translatable = ['name'];
@@ -44,6 +47,10 @@ class Student extends Model
 
     public function stdParent (){
         return $this->belongsTo('App\Models\StdParent','parent_id');
+    }
+
+    public function std_account (){
+        return $this->hasMany('App\Models\Std_Account','student_id');
     }
 
 

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 interface StudentRepositoryInterface {
 
     public function getStudents();
+
+    public function getFees();
     
     public function getBloodType();
     

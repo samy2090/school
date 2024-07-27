@@ -131,6 +131,7 @@
 								<li class="nav-item"><a href="{{route('sections.index')}}" class="nav-link">{{ trans('sidebar.sections_list') }}</a></li>
 							</ul>
 						</li>
+						<!-- start students sections -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-columns"></i>
@@ -140,10 +141,13 @@
 										<li class="nav-item"><a href="{{route('addParents')}}" class="nav-link">{{ trans('sidebar.stdParents_dts') }}</a></li>
 										<li class="nav-item"><a href="{{route('students.index')}}" class="nav-link">{{ trans('sidebar.students') }}</a></li>
 										<li class="nav-item"><a href="{{route('promotion.index')}}" class="nav-link">{{ trans('sidebar.promotion') }}</a></li>
+										<li class="nav-item"><a href="{{route('graduation.index')}}" class="nav-link">{{ trans('sidebar.graduation') }}</a></li>
 										{{-- <li class="nav-item-divider"></li> --}}
 
 							</ul>
 						</li>
+						<!-- end students sections -->
+						<!-- start teachers sections -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-arrow-fat-lines-down"></i>
@@ -154,18 +158,18 @@
 
 							</ul>
 						</li>
+						<!-- end teachers sections -->
+						<!-- start fees sections -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-arrow-fat-lines-right"></i>
-								<span>elements</span>
+								<span>fees</span>
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Horizontal navigation">
-								<li class="nav-item"><a href="navigation_horizontal_elements.html" class="nav-link">Navigation elements</a></li>
-								<li class="nav-item"><a href="navigation_horizontal_tabs.html" class="nav-link">Tabbed navigation</a></li>
-								<li class="nav-item"><a href="navigation_horizontal_disabled.html" class="nav-link">Disabled navigation links</a></li>
-								<li class="nav-item"><a href="navigation_horizontal_mega.html" class="nav-link">Horizontal mega menu</a></li>
+								<li class="nav-item"><a href="{{route('fees.index')}}" class="nav-link">{{ trans('sidebar.current_fees') }}</a></li>
 							</ul>
 						</li>
+						<!-- end fees sections -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="ph-arrow-elbow-down-right"></i> <span>Menu levels</span></a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Menu levels">
