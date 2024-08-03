@@ -41,7 +41,7 @@
 								</span>
 							</a>
 						</li>
-						{{-- <li class="nav-item nav-item-submenu">
+					{{-- <li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-layout"></i>
 								<span>Layouts</span>
@@ -94,13 +94,15 @@
 								<span>Changelog</span>
 								<span class="badge bg-primary align-self-center rounded-pill ms-auto">4.0</span>
 							</a>
-						</li> --}}
+						</li>
+					--}}
 
 						<!-- Layout -->
 						<li class="nav-item-header">
 							<div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">{{ trans('sidebar.learning') }}</div>
 							<i class="ph-dots-three sidebar-resize-show"></i>
 						</li>
+						<!-- START GRADES -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-layout"></i>
@@ -111,6 +113,8 @@
 								<li class="nav-item"><a href="{{route('grades.index')}}" class="nav-link">{{ trans('sidebar.grades_list') }}</a></li>
 							</ul>
 						</li>
+						<!-- END GRADES -->
+						<!-- START CLASSROOMS -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
 								<i class="ph-layout"></i>
@@ -121,6 +125,8 @@
 								<li class="nav-item"><a href="{{route('classrooms.index')}}" class="nav-link">{{ trans('sidebar.classrooms_list') }}</a></li>
 							</ul>
 						</li>
+						<!-- END GRADES -->
+						<!-- START SECTIONS -->
 						<li class="nav-item nav-item-submenu ">
 							<a href="#" class="nav-link">
 								<i class="ph-columns"></i>
@@ -131,6 +137,7 @@
 								<li class="nav-item"><a href="{{route('sections.index')}}" class="nav-link">{{ trans('sidebar.sections_list') }}</a></li>
 							</ul>
 						</li>
+						<!-- END SECTIONS -->
 						<!-- start students sections -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link">
@@ -142,6 +149,7 @@
 										<li class="nav-item"><a href="{{route('students.index')}}" class="nav-link">{{ trans('sidebar.students') }}</a></li>
 										<li class="nav-item"><a href="{{route('promotion.index')}}" class="nav-link">{{ trans('sidebar.promotion') }}</a></li>
 										<li class="nav-item"><a href="{{route('graduation.index')}}" class="nav-link">{{ trans('sidebar.graduation') }}</a></li>
+										<li class="nav-item"><a href="#" class="nav-link">{{ trans('sidebar.graduation') }}</a></li>
 										{{-- <li class="nav-item-divider"></li> --}}
 
 							</ul>
@@ -167,6 +175,7 @@
 							</a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Horizontal navigation">
 								<li class="nav-item"><a href="{{route('fees.index')}}" class="nav-link">{{ trans('sidebar.current_fees') }}</a></li>
+								<li class="nav-item"><a href="{{route('feesInvoices.index')}}" class="nav-link">{{ trans('sidebar.current_invoices') }}</a></li>
 							</ul>
 						</li>
 						<!-- end fees sections -->

@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Livewire\Livewire;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +61,7 @@ Route::group(
             Route::resource('/promotion','App\Http\Controllers\PromotionController');
             Route::resource('/graduation','App\Http\Controllers\GraduationController');
             Route::resource('/fees','App\Http\Controllers\FeesController');
+            Route::resource('/feesInvoices','App\Http\Controllers\FeesInvoicesController');
             Route::resource('/std_account','App\Http\Controllers\StdAccountController');
             Route::post('/back_graduation/{id}','App\Http\Controllers\GraduationController@back_graduation')->name('back_graduation');
             Route::post('/uploadAttachs','App\Http\Controllers\StudentController@uploadAttachs')->name('uploadAttachs');

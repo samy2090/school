@@ -22,4 +22,8 @@ class Fees extends Model
     public function classroom(){
         return $this->hasOne('App\Models\Classroom','id');
     }
+    public function invoices()
+    {
+        return $this->hasMany(FeesInvoices::class);
+    }
 }

@@ -53,6 +53,11 @@ class Student extends Model
         return $this->hasMany('App\Models\Std_Account','student_id');
     }
 
+    public function invoices()
+    {
+        return $this->hasMany(FeesInvoices::class);
+    }
+
 
 
     public function image(): MorphMany
