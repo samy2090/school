@@ -22,14 +22,14 @@
 							<h5 class="mb-0">{{ trans('grades.grades') }}</h5>
 						</div>
 						@if ($errors->any())
-						<div class="alert alert-danger">
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+							<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
 						<!-- Insert grades modal  -->
 						<div id="modal_centered" class="modal fade" tabindex="-1">
 							<div class="modal-dialog modal-dialog-centered modal-lg">

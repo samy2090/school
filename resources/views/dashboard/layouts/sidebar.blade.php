@@ -149,7 +149,7 @@
 										<li class="nav-item"><a href="{{route('students.index')}}" class="nav-link">{{ trans('sidebar.students') }}</a></li>
 										<li class="nav-item"><a href="{{route('promotion.index')}}" class="nav-link">{{ trans('sidebar.promotion') }}</a></li>
 										<li class="nav-item"><a href="{{route('graduation.index')}}" class="nav-link">{{ trans('sidebar.graduation') }}</a></li>
-										<li class="nav-item"><a href="#" class="nav-link">{{ trans('sidebar.graduation') }}</a></li>
+										<li class="nav-item"><a href="{{route('attendance.index')}}" class="nav-link">Attendance</a></li>
 										{{-- <li class="nav-item-divider"></li> --}}
 
 							</ul>
@@ -179,6 +179,17 @@
 							</ul>
 						</li>
 						<!-- end fees sections -->
+						<!-- start meetings sections -->
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">
+								<i class="ph-arrow-fat-lines-right"></i>
+								<span>zoom meetings</span>
+							</a>
+							<ul class="nav-group-sub collapse" data-submenu-title="Horizontal navigation">
+								<li class="nav-item"><a href="{{route('online_meetings.index')}}" class="nav-link">online meetings</a></li>
+							</ul>
+						</li>
+						<!-- end meatings sections -->
 						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="ph-arrow-elbow-down-right"></i> <span>Menu levels</span></a>
 							<ul class="nav-group-sub collapse" data-submenu-title="Menu levels">

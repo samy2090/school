@@ -62,7 +62,9 @@ Route::group(
             Route::resource('/graduation','App\Http\Controllers\GraduationController');
             Route::resource('/fees','App\Http\Controllers\FeesController');
             Route::resource('/feesInvoices','App\Http\Controllers\FeesInvoicesController');
+            Route::resource('/attendance','App\Http\Controllers\AttendanceController');
             Route::resource('/std_account','App\Http\Controllers\StdAccountController');
+            Route::resource('/online_meetings','App\Http\Controllers\OnlineMeetingController');
             Route::post('/back_graduation/{id}','App\Http\Controllers\GraduationController@back_graduation')->name('back_graduation');
             Route::post('/uploadAttachs','App\Http\Controllers\StudentController@uploadAttachs')->name('uploadAttachs');
             Route::post('/attachmentDelete/{id}','App\Http\Controllers\StudentController@attachmentDelete')->name('attachmentDelete');

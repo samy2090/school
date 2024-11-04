@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use App\Models\Student;
 
 
 class Section extends Model
@@ -20,4 +21,5 @@ class Section extends Model
     public function classroom(){
         return $this->belongsTo('App\Models\ClassRoom','class_id');
     }
+
 }
